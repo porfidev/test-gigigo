@@ -3,3 +3,17 @@
 .DS_Store
 assets/img/
 libs/.DS_Store
+
+# dependencias
+node_modules/
+
+# sqlite
+database.db
+database.db-shm
+database.db-wal
+
+# logs
+*.log
+
+# env
+.env
