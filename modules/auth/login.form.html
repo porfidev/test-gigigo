@@ -1,16 +1,18 @@
 <div class="row">
-    <div class="col-xs-8 col-xs-offset-3">
-        <form ng-submit="authctrl.sendLogin()" role="form">
-            <div class="form-group">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" ng-model="authctrl.user.email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" ng-model="authctrl.user.password" class="form-control" required>
-            </div>
-
-            <button class="btn btn-success btn-block btn-lg">Iniciar sesión</button>
-        </form>
+  <div class="col-lg-4 col-xs-offset-4">
+    <div class="alert alert-info">
+      Para esta demostración, ingresa el correo <b>admin@gigigo.com</b> y contraseña <b>abcd1234</b> para continuar.
     </div>
+    <form ng-submit="AuthCtrl.sendLogin()" role="form">
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" ng-model="AuthCtrl.user.email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" ng-model="AuthCtrl.user.password" class="form-control" required>
+      </div>
+      <button class="btn btn-success btn-block btn-lg">Iniciar sesión</button>
+    </form>
+  </div>
 </div>

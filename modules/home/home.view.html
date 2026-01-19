@@ -1,63 +1,92 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                <img alt="Brand" src="assets/img/latiendita_small-02.png" width="140">
-            </a>
-        </div>
-
-        <p class="navbar-text navbar-right"><a class="btn btn-default navbar-btn" ui-sref="logout">Cerrar sesión</a></p>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand logo-home" href="#">
+        <img alt="La tiendita by porfi" src="assets/img/latiendita_small-02.png" width="140">
+      </a>
     </div>
+
+    <div class="navbar-right close-session">
+      <a class="btn btn-default navbar-btn" ui-sref="logout">Cerrar sesión</a>
+    </div>
+  </div>
 </nav>
 
 <div class="container">
-    <div class="col-xs-8 col-xs-offset-2">
-        <h1>Productos</h1>
-        <div class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading">
-                <div class="pull-right">
-                    <button ng-click="tiendactrl.mostrarNuevo()" class="btn btn-success" ng-hide="tiendactrl.agregarNuevo"><i class="glyphicon glyphicon-plus-sign"></i> Agregar</button>
-                    <button ng-click="tiendactrl.cancelarNuevo()" class="btn btn-danger" ng-show="tiendactrl.agregarNuevo"><i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
-                </div>
-                <h4>Control de Productos</h4>
-            </div>
-
-            <!-- Table -->
-            <table class="table table-striped" ng-hide="tiendactrl.agregarNuevo || tiendactrl.mostrarDetalle">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th colspan="2">
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="producto in tiendactrl.productos">
-                    <td>
-                        {{ producto.id }}
-                    </td>
-                    <td>
-                        <a href="" ng-click="tiendactrl.detalleProducto(producto)">{{ producto.name }}</a>
-                    </td>
-                    <td>
-                        <button ng-click="tiendactrl.mostrarEditar(producto)" class="btn btn-sm btn-default btn-info"><i class="glyphicon glyphicon-edit"></i> editar</button>
-                    </td>
-                    <td>
-                        <button ng-click="tiendactrl.eliminarProducto(producto)" class="btn btn-sm btn-default btn-warning"><i class="glyphicon glyphicon glyphicon-remove-sign"></i> eliminar</button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1>Productos</h1>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <div class="pull-right">
+          <button class="btn btn-success" ng-click="TiendaCtrl.mostrarNuevo()"
+                  ng-hide="TiendaCtrl.agregarNuevo"><i
+            class="glyphicon glyphicon-plus-sign"></i> Agregar
+          </button>
+          <button class="btn btn-danger" ng-click="TiendaCtrl.cancelarNuevo()"
+                  ng-show="TiendaCtrl.agregarNuevo"><i
+            class="glyphicon glyphicon-ban-circle"></i> Cancelar
+          </button>
         </div>
+        <h4 ng-show="TiendaCtrl.agregarNuevo && TiendaCtrl.producto.id == null">Agregar nuevo producto</h4>
+        <h4 ng-show="TiendaCtrl.agregarNuevo && TiendaCtrl.producto.id != null">Editar producto</h4>
+        <h4 ng-hide="TiendaCtrl.agregarNuevo">Lista de productos</h4>
+      </div>
 
-        <div ng-show="tiendactrl.agregarNuevo">
-            <div ng-include="'modules/home/producto.form.html'"></div>
-        </div>
-
-        <div ng-show="tiendactrl.mostrarDetalle">
-            <div ng-include="'modules/home/producto.view.html'"></div>
-        </div>
+      <!-- Table -->
+      <table class="table table-striped" ng-hide="TiendaCtrl.agregarNuevo || TiendaCtrl.mostrarDetalle">
+        <thead>
+        <tr>
+          <th style="width: 10%;">ID</th>
+          <th style="width: 40%;">Nombre</th>
+          <th style="width: 10%;">Precio</th>
+          <th style="width: 10%;">Cantidad</th>
+          <th colspan="2" style="width: 30%;">
+            Acciones
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="producto in TiendaCtrl.productos">
+          <td>
+            {{ producto.id }}
+          </td>
+          <td>
+            <a href="" ng-click="TiendaCtrl.detalleProducto(producto)">{{ producto.name }}</a>
+          </td>
+          <td>
+            {{ producto.price }}
+          </td>
+          <td>
+            {{ producto.stock }}
+          </td>
+          <td>
+            <button class="btn btn-sm btn-default btn-info" ng-click="TiendaCtrl.mostrarEditar(producto)"><i
+              class="glyphicon glyphicon-edit"></i> editar
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-default btn-warning" ng-click="TiendaCtrl.eliminarProducto(producto)"><i
+              class="glyphicon glyphicon glyphicon-remove-sign"></i> eliminar
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
+
+    <div ng-show="TiendaCtrl.agregarNuevo">
+      <div ng-include="'modules/home/producto.form.html'"></div>
+    </div>
+
+    <div ng-show="TiendaCtrl.mostrarDetalle">
+      <div ng-include="'modules/home/producto.view.html'"></div>
+    </div>
+  </div>
 </div>
+
+<footer class="footer">
+  <div class="container-fluid text-center">
+    <p>© 2016 La tiendita by porfi</p>
+  </div>
+</footer>

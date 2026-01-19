@@ -1,0 +1,19 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "Test project for job application at Gigigo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js"
+  },
+  "author": "porfi.dev <hola@porfi.dev>",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "@hono/node-server": "^1.19.8",
+    "better-sqlite3": "^12.5.0",
+    "hono": "^4.11.3"
+  },
+  "type": "module"
+}

@@ -1,8 +1,12 @@
-<form ng-submit="tiendactrl.guardarProducto(tiendactrl.producto)" role="form">
-    <fieldset>
-        <label class="control-label">Nombre del Producto:</label>
-        <input class="form-control" type="text" ng-model="tiendactrl.producto.name">
-    </fieldset>
-    <br>
-    <button class="btn btn-block btn-primary"> Guardar </button>
+<form ng-submit="TiendaCtrl.guardarProducto(TiendaCtrl.producto)" role="form">
+  <fieldset>
+    <label class="control-label">Nombre del Producto:</label>
+    <input class="form-control" type="text" ng-model="TiendaCtrl.producto.name" required>
+    <label class="control-label">Precio del Producto:</label>
+    <input class="form-control" type="text" ng-model="TiendaCtrl.producto.price">
+    <label class="control-label">Cantidad del Producto:</label>
+    <input class="form-control" type="text" ng-model="TiendaCtrl.producto.stock">
+  </fieldset>
+  <br>
+  <button class="btn btn-block btn-primary"> Guardar</button>
 </form>

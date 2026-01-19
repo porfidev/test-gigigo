@@ -1,34 +1,44 @@
 <div class="row">
-    <div class="col-xs-12">
-        <div class="well">
+  <div class="col-xs-12">
+    <div class="well">
 
-            <h2>{{tiendactrl.producto.name}}</h2>
+      <h2>{{TiendaCtrl.producto.name}}</h2>
 
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    {{tiendactrl.producto.id}} - {{tiendactrl.producto.name}}
-                </div>
-                <div class="panel-body">
-
-                    <table class="table">
-                        <tr>
-                            <td>ID</td>
-                            <td>{{tiendactrl.producto.id}}</td>
-                        </tr>
-                        <tr>
-                            <td>Creado el:</td>
-                            <td>{{tiendactrl.producto.created_date}}</td>
-                        </tr>
-                        <tr>
-                            <td>Último cambio:</td>
-                            <td>{{tiendactrl.producto.updated_date}}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          {{TiendaCtrl.producto.id}} - {{TiendaCtrl.producto.name}}
         </div>
+        <div class="panel-body">
 
-
-        <button ng-click="tiendactrl.regresarDetalle()" class="btn btn-info"><i class="glyphicon glyphicon-arrow-left"></i> Regresar</button>
+          <table class="table">
+            <tr>
+              <td>ID</td>
+              <td>{{TiendaCtrl.producto.id}}</td>
+            </tr>
+            <tr>
+              <td>Precio:</td>
+              <td>{{TiendaCtrl.producto.price}}</td>
+            </tr>
+            <tr>
+              <td>Cantidad disponible:</td>
+              <td>{{TiendaCtrl.producto.stock}}</td>
+            </tr>
+            <tr>
+              <td>Creado el:</td>
+              <td>{{TiendaCtrl.producto.createdAt}}</td>
+            </tr>
+            <tr>
+              <td>Último cambio:</td>
+              <td>{{TiendaCtrl.producto.updatedAt}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
+
+
+    <button class="btn btn-info" ng-click="TiendaCtrl.regresarDetalle()"><i class="glyphicon glyphicon-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
 </div>
