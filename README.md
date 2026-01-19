@@ -59,12 +59,12 @@ http://localhost:3003
 ## 💻 Ejecución el servidor en remoto con PM2
 
 ```
-pm2 start ecosystem.config.js
+pm2 start ecosystem.config.cjs
 ```
 
 Modo Productivo
 ```
-pm2 start ecosystem.config.js --env production
+pm2 start ecosystem.config.cjs --env production
 ```
 ---
 
