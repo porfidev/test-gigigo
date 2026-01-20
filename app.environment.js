@@ -7,6 +7,6 @@
   angular
     .module('tiendita')
     .constant('env', {
-      api: 'http://localhost:3003/examen/'
+      api: '/examen/'
     })
 })();
