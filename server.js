@@ -13,20 +13,7 @@ app.use(
     root: './'
   }),
   cors({
-    origin: (origin) => {
-      if (!origin) return null; // permite Postman, curl, server-side
-
-      try {
-        const { hostname } = new URL(origin);
-        if (hostname === 'porfi.dev' || hostname.endsWith('.porfi.dev')) {
-          return origin;
-        }
-      } catch {
-        return null;
-      }
-
-      return null;
-    },
+    origin: '*',
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
   })
