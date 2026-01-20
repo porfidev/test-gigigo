@@ -1,6 +1,6 @@
 {
   "name": "yes",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Test project for job application at Gigigo",
   "main": "app.js",
   "scripts": {
